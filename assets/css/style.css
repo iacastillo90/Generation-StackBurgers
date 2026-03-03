@@ -1,0 +1,90 @@
+/* =========================================
+   0. RESET Y REGLA DE ORO PARA GSAP PINNING
+========================================= */
+html, body {
+  /* Al usar pin: true en GSAP, overflow-x: hidden aquí rompe el fixed positioning en varios navegadores */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: clip; /* clip previene scroll horizontal sin romper GSAP ScrollTrigger */
+}
+
+/* =========================================
+   1. ESTILOS DEL HERO Y FONDO
+========================================= */
+#hero {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  height: 100vh;
+}
+
+body.loading {
+  overflow: hidden; /* Prevent scrolling before GSAP is ready */
+}
+
+/* Ese destello sutil de fondo está genial, lo mantenemos */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 100% 50%,
+    rgba(255, 193, 7, 0.05),
+    transparent
+  );
+  pointer-events: none;
+}
+
+
+
+/* =========================================
+   2. ANIMACIONES DE TEXTO (Tu código Senior)
+========================================= */
+.text-reveal-container {
+  position: relative;
+  height: 300px; /* Tu altura original daba mucho mejor espacio para respirar */
+  display: flex;
+  align-items: center;
+}
+
+.reveal-step {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%; /* Asegura que el texto no se colapse */
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Excelente curva de animación */
+}
+
+/* Estado activo (cuando JS le pone la clase) */
+.reveal-step.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Estado inactivo (Animación de salida hacia la izquierda y arriba) */
+.reveal-step:not(.active) {
+  transform: translateY(-40%) translateX(-20px);
+}
+
+/* =========================================
+   3. TIPOGRAFÍA
+========================================= */
+.reveal-step h1,
+.reveal-step h2 {
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+.reveal-step p {
+  color: #6c757d;
+  max-width: 400px;
+}
