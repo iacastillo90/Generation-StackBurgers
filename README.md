@@ -18,6 +18,14 @@ Quería darle a la página esa sensación *premium* y fluida que solemos ver en 
 
 El resultado es un efecto donde los ingredientes principales reaccionan de manera fluida al scroll del usuario. Costó horas extra de lectura de documentación, prueba y error, pero siento que le dio al proyecto un alma completamente distinta y me demostró lo potente que puede ser la web moderna.
 
+## 🎬 Inspiración y Referencia Visual
+
+El efecto de scroll implementado en la sección Hero está inspirado en animaciones de productos de alto nivel de la industria (estilo las secuencias de scroll de Apple). 
+
+El objetivo principal fue replicar el ensamblaje visual de la hamburguesa a medida que el usuario interactúa con la página, pasando de una maqueta estática a una experiencia inmersiva. 
+
+> **Referencia:** Para entender la visión exacta que busqué replicar con el código, puedes ver el video conceptual original que inspiró esta animación [haciendo clic aquí](COLOCA_TU_LINK_DE_YOUTUBE_O_DRIVE_AQUI).
+
 ## 🛠️ ¿Con qué "cocinamos" este proyecto? (Stack Tecnológico)
 
 * **Estructura:** HTML5 Semántico.
@@ -32,6 +40,7 @@ El resultado es un efecto donde los ingredientes principales reaccionan de maner
 - [x] Sección de Menú utilizando *Cards* bien distribuidas en columnas.
 - [x] Formulario de reservas interactivo, limpio y estilizado.
 - [x] JavaScript nativo: uso de `onclick`, captura de `value` del formulario, `alert()` dinámico y modificación de propiedades desde JS.
+- [x] Integración de buenas prácticas de arquitectura de archivos y control de versiones.
 
 ---
 *Desarrollado con mucha dedicación, horas frente a la pantalla y ganas de seguir creciendo en este camino del desarrollo Full Stack.*
