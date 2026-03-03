@@ -24,8 +24,6 @@ El efecto de scroll implementado en la sección Hero está inspirado en animacio
 
 El objetivo principal fue replicar el ensamblaje visual de la hamburguesa a medida que el usuario interactúa con la página, pasando de una maqueta estática a una experiencia inmersiva. 
 
-> **Referencia:** Para entender la visión exacta que busqué replicar con el código, puedes ver el video conceptual original que inspiró esta animación [haciendo clic aquí](COLOCA_TU_LINK_DE_YOUTUBE_O_DRIVE_AQUI).
-
 ## 🛠️ ¿Con qué "cocinamos" este proyecto? (Stack Tecnológico)
 
 * **Estructura:** HTML5 Semántico.
