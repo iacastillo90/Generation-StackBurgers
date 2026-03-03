@@ -136,3 +136,30 @@ function initializeTimeline() {
 
   ScrollTrigger.refresh();
 }
+
+// =========================================
+// LÓGICA DEL FORMULARIO DE RESERVAS
+// =========================================
+
+function procesar_reserva() {
+
+    // obtener valores de los inputs
+    console.log(document.getElementById("nombreReserva").value);
+    console.log(document.getElementById("emailReserva").value);
+    console.log(document.getElementById("personasReserva").value);
+    console.log(document.getElementById("fechaReserva").value);
+
+    // mensaje confirmación con un alert
+    alert("¡Reserva exitosa en StackBurgers!");
+
+    // limpiar los inputs
+    document.getElementById("nombreReserva").value = "";
+    document.getElementById("emailReserva").value = "";
+    document.getElementById("personasReserva").value = "";
+    document.getElementById("fechaReserva").value = "";
+
+    // mensaje de confirmación en el DOM
+    // inyecta html en la etiqueta
+    document.getElementById("mensajeReserva").innerHTML = "<h5 class='mb-0'>Registro realizado correctamente.</h5>"; 
+
+}

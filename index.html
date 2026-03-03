@@ -71,6 +71,7 @@
 
     </section>
 
+    <!-- Seccion Sobre Nosotros-->
     <section id="nosotros" class="py-5 bg-dark">
       <div class="container py-5">
         <div class="row align-items-center g-5">
@@ -298,6 +299,58 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+
+    <section id="reservas" class="py-5 bg-dark text-white">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6">
+            
+            <div class="text-center mb-4">
+              <h2 class="display-5 fw-bold text-warning text-uppercase tracking-widest">Reserva tu Mesa</h2>
+              <p class="text-light">Complete los siguientes datos:</p>
+            </div>
+
+            <div class="card shadow-lg border-0 rounded-4" style="background-color: var(--menu-card-color);">
+              <div class="card-body p-4 p-md-5">
+                
+                <form action="" method="get">
+                    
+                    <div class="mb-3">
+                        <label for="nombreReserva" class="form-label">Nombre completo:</label>
+                        <input type="text" id="nombreReserva" name="nombre" class="form-control bg-light border-0" required placeholder="Ingresa tu nombre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="emailReserva" class="form-label">Correo electrónico:</label>
+                        <input type="email" id="emailReserva" name="email" class="form-control bg-light border-0" required placeholder="Ingresa tu email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="personasReserva" class="form-label">Cantidad de personas:</label>
+                        <input type="number" id="personasReserva" name="personas" class="form-control bg-light border-0" required placeholder="Ej: 2">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="fechaReserva" class="form-label">Fecha de reserva:</label>
+                        <input type="date" id="fechaReserva" name="fecha" class="form-control bg-light border-0" required>
+                    </div>
+
+                    <input type="button" class="btn btn-warning w-100 fw-bold" value="Enviar Reserva" onclick="procesar_reserva()">
+
+                </form>
+
+                <div class="text-center mt-3">
+                    <span id="mensajeReserva" style="color: #198754;"></span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
