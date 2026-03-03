@@ -22,6 +22,7 @@
             class="d-inline-block align-text-top">
         </a>
 
+        <!--Boton Hamburguesa-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,7 +40,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#nosotros">La Cocina</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" href="#contactanos">Contacto</a>
+            </li>
             <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
               <a href="#reservas" class="btn btn-dark w-100 px-4 rounded-pill">Reservar Mesa</a>
             </li>
@@ -55,14 +58,19 @@
     <!-- Seccion Hero -->
     <section id="hero" class="container-fluid p-0" style="height: 100vh; overflow: hidden;">
 
+      <!-- Fondo Animado -->
       <canvas id="burger-canvas" class="w-100 h-100 position-absolute top-0 start-0"
         style="object-fit: cover; z-index: 0;"></canvas>
 
+      <!-- Textos y Boton -->
       <div class="row w-100 h-100 z-1 position-relative align-items-center m-0">
         <div class="col-md-5 px-5 ms-md-5 ">
           <div class="text-reveal-container position-relative" style="height: 150px;">
-            <!-- Textos -->
+            <h1 class="display-4 fw-bold text-white text-uppercase tracking-widest mb-3 text-reveal">
+              StackBurgers
+            </h1>
           </div>
+          <!-- Boton -->
           <button class="btn btn-warning btn-lg mt-5 px-4 py-3 fw-bold position-relative z-3">
             Pedir Ahora
           </button>
@@ -76,6 +84,7 @@
       <div class="container py-5">
         <div class="row align-items-center g-5">
 
+          <!-- Card con imagen -->
           <div class="col-12 col-lg-6 position-relative">
             <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?q=80&w=800&auto=format&fit=crop"
               class="img-fluid rounded-4 shadow-lg" alt="Hamburguesa en StackBurgers">
@@ -86,6 +95,7 @@
             </div>
           </div>
 
+          <!-- Texto -->
           <div class="col-12 col-lg-6 px-lg-4">
             <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-2">La Cocina</h6>
             <h2 class="display-5 fw-bold mb-4 text-white">Compilando el Sabor Perfecto</h2>
@@ -116,7 +126,7 @@
               </li>
             </ul>
 
-            <a href="#reservas" class="btn btn-dark btn-lg px-4 rounded-pill">
+            <a href="#reservas" class="btn btn-warning w-100 fw-bold">
               Quiero probarlas <i class="bi bi-arrow-right ms-2"></i>
             </a>
           </div>
@@ -128,12 +138,14 @@
     <!-- Cards Menu -->
     <section id="menu" class="py-5 bg-dark">
       <div class="container">
+        <!-- Titulo -->
         <div class="text-center mb-5">
           <h2 class="display-5 fw-bold text-white text-uppercase tracking-widest">Menú</h2>
         </div>
 
+        <!-- Cards para Menu-->
         <div class="row g-4 justify-content-center">
-
+          <!-- Card 1 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -155,6 +167,7 @@
             </div>
           </div>
 
+          <!-- Card 2 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -177,6 +190,7 @@
             </div>
           </div>
 
+          <!-- Card 3 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -197,6 +211,7 @@
             </div>
           </div>
 
+          <!-- Card 4 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -217,6 +232,7 @@
             </div>
           </div>
 
+          <!-- Card 5 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -238,6 +254,7 @@
             </div>
           </div>
 
+          <!-- Card 6 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -258,6 +275,7 @@
             </div>
           </div>
 
+          <!-- Card 7 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -279,6 +297,7 @@
             </div>
           </div>
 
+          <!-- Card 8 -->
           <div class="col-12 col-md-6 col-lg-3">
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -303,17 +322,18 @@
       </div>
     </section>
 
-
+    <!-- Seccion de Formulario de Reserva -->
     <section id="reservas" class="py-5 bg-dark text-white">
       <div class="container py-5">
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
-            
+            <!-- Titulo -->
             <div class="text-center mb-4">
               <h2 class="display-5 fw-bold text-warning text-uppercase tracking-widest">Reserva tu Mesa</h2>
               <p class="text-light">Complete los siguientes datos:</p>
             </div>
 
+            <!-- Formulario -->
             <div class="card shadow-lg border-0 rounded-4" style="background-color: var(--menu-card-color);">
               <div class="card-body p-4 p-md-5">
                 
@@ -355,14 +375,74 @@
       </div>
     </section>
 
-    <section id="ubicacion"
-      class="container-fluid vh-100 bg-dark text-white d-flex align-items-center justify-content-center">
-      <h2>Aquí irá la ubicación</h2>
-    </section>
+    <!-- Seccion de Formulario de Contacto -->
+    <section id="contactanos" class="py-5 bg-dark text-white">
+      <div class="container py-5">
+        <div class="row g-5 align-items-center">
+          <!-- Contenido -->
+          <div class="col-lg-6">
+            <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-2">Contacto</h6>
+            <h2 class="display-5 fw-bold mb-4">¿Tienes alguna duda o sugerencia?</h2>
+            <p class="lead text-secondary mb-4">
+              Estamos aquí para escucharte. Ya sea para un evento corporativo, sugerencias para nuestro menú o felicitaciones al chef.
+            </p>
+            
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-dark text-warning rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="bi bi-geo-alt-fill fs-5"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0">Ubicación</h6>
+                <p class="text-secondary mb-0">Av. Siempre Viva 742, Santiago</p>
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-dark text-warning rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="bi bi-envelope-fill fs-5"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0">Email</h6>
+                <p class="text-secondary mb-0">contacto@stackburgers.cl</p>
+              </div>
+            </div>
+          </div>
 
-    <section id="contactanos"
-      class="container-fluid vh-100 bg-dark text-white d-flex align-items-center justify-content-center">
-      <h2>Aquí irá contactanos</h2>
+          <!-- Formulario -->
+          <div class="col-lg-6 ">
+            <div class="card shadow-lg border-0 rounded-4 p-4 p-md-5" style="background-color: var(--menu-card-color) ">
+              <div class="card-body p-0">
+                <form id="formularioContacto">
+                  
+                  <div class="mb-3 text-white">
+                    <label for="nombreContacto" class="form-label fw-medium ">Nombre completo</label>
+                    <input type="text" id="nombreContacto" class="form-control bg-light border-0" placeholder="Ej: Ivan Castillo" required>
+                  </div>
+                  
+                  <div class="mb-3 text-white">
+                    <label for="emailContacto" class="form-label fw-medium">Correo electrónico</label>
+                    <input type="email" id="emailContacto" class="form-control bg-light border-0" placeholder="iacastillo.ili2@gmail.com" required>
+                  </div>
+                  
+                  <div class="mb-4 text-white">
+                    <label for="mensajeContacto" class="form-label fw-medium">Tu Mensaje</label>
+                    <textarea id="mensajeContacto" class="form-control bg-light border-0" rows="4" placeholder="¿En qué te podemos ayudar?" required></textarea>
+                  </div>
+                                    
+                  <button type="button" class="btn btn-warning w-100 fw-bold py-3" onclick="procesar_contacto()">
+                    Enviar Mensaje
+                  </button>
+
+                </form>
+                
+                <div id="alertaContacto" class="mt-4 text-center"></div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
   </main>
@@ -371,6 +451,7 @@
     <div class="container text-center text-md-start">
       <div class="row text-center text-md-start">
 
+        <!---->
         <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
           <img src="./assets/img/jpg/logo.jpg" alt="Logo StackBurgers" width="180" class="mb-4 rounded">
           <p class="small text-light mb-2">
@@ -384,6 +465,7 @@
           </p>
         </div>
 
+        <!-- Menu -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 fw-bold text-warning">Menú Rápido</h6>
           <p><a href="#hero" class="text-light text-decoration-none small footer-link">Inicio</a></p>
@@ -391,28 +473,31 @@
           <p><a href="#reservas" class="text-light text-decoration-none small footer-link">Reserva tu Mesa</a></p>
         </div>
 
+        <!-- Redes Sociales -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 fw-bold text-warning">Síguenos</h6>
           <div class="d-flex justify-content-center justify-content-md-start gap-3">
-            <a href="#" class="text-light fs-4 text-decoration-none"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-light fs-4 text-decoration-none"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-light fs-4 text-decoration-none"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" class="text-light fs-4 text-decoration-none"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" class="text-light fs-4 text-decoration-none"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" class="text-light fs-4 text-decoration-none"><i class="bi bi-tiktok"></i></a>
           </div>
         </div>
       </div>
 
       <hr class="mb-4 mt-5 border-secondary">
 
+      <!-- Copyright -->
       <div class="row align-items-center">
         <div class="col-md-7 col-lg-8">
           <p class="small text-secondary mb-0">Copyright © 2026 <strong>StackBurgers</strong>. Todos los derechos
             reservados.</p>
         </div>
 
+        <!-- Creditos -->
         <div class="col-md-5 col-lg-4 text-center text-md-end mt-2 mt-md-0">
           <p class="small text-secondary mb-0">
             Desarrollado con ☕ por
-            <a href="https://linkedin.com/in/tu-perfil" target="_blank"
+            <a href="https://www.linkedin.com/in/iv%C3%A1n-castillo-iligaray-03b25b243/" target="_blank"
               class="text-warning text-decoration-none fw-bold">
               Ivan Andres Castillo Iligaray
             </a>

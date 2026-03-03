@@ -1,19 +1,20 @@
-/* =========================================
-   0. RESET Y REGLA DE ORO PARA GSAP PINNING
-========================================= */
+/* Preparando la base:
+  Reset esencial y para que el efecto de GSAP no se rompa al hacer scroll.
+*/
 html, body {
-  /* Al usar pin: true en GSAP, overflow-x: hidden aquí rompe el fixed positioning en varios navegadores */
+  /* Sin esto, el fixed positioning se vuelve loco en algunos navegadores */
   margin: 0;
   padding: 0;
 }
 
 body {
-  overflow-x: clip; /* clip previene scroll horizontal sin romper GSAP ScrollTrigger */
+  /* Usamos clip en lugar de hidden para no matar el ScrollTrigger */
+  overflow-x: clip; 
 }
 
-/* =========================================
-   1. ESTILOS DEL HERO Y FONDO
-========================================= */
+/* El Hero:
+  Aquí definimos el fondo principal y la animación de fondo.
+*/
 #hero {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
@@ -21,10 +22,11 @@ body {
 }
 
 body.loading {
-  overflow: hidden; /* Prevent scrolling before GSAP is ready */
+  /* Pausamos la interacción hasta que la animación esté completamente cargada */
+  overflow: hidden; 
 }
 
-/* Ese destello sutil de fondo está genial, lo mantenemos */
+/* Un toque de luz de fondo */
 #hero::before {
   content: "";
   position: absolute;
@@ -40,14 +42,14 @@ body.loading {
   pointer-events: none;
 }
 
-
-
-/* =========================================
-   2. ANIMACIONES DE TEXTO (Tu código Senior)
-========================================= */
+/* El texto revelado:
+  Aquí es donde ocurre la magia de la animación de entrada y salida del texto. 
+  Cada paso tiene su propio estilo para que el movimiento se sienta fluido y natural.
+*/
 .text-reveal-container {
   position: relative;
-  height: 300px; /* Tu altura original daba mucho mejor espacio para respirar */
+  /* Le damos un buen espacio en alto para que el texto respire tranquilo */
+  height: 300px; 
   display: flex;
   align-items: center;
 }
@@ -56,28 +58,28 @@ body.loading {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 100%; /* Asegura que el texto no se colapse */
+  width: 100%; /* Evita que el texto se apriete de forma extraña */
   transform: translateY(-50%);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Excelente curva de animación */
+  /* Esta curva (cubic-bezier) es el secreto para que el movimiento se sienta humano y no robótico */
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
 }
 
-/* Estado activo (cuando JS le pone la clase) */
+/* Estado activo: como se mueven los textos */
 .reveal-step.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(-50%) translateX(0);
 }
 
-/* Estado inactivo (Animación de salida hacia la izquierda y arriba) */
+/* Estado de salida: como se mueven los textos */
 .reveal-step:not(.active) {
   transform: translateY(-40%) translateX(-20px);
 }
 
-/* =========================================
-   3. TIPOGRAFÍA
-========================================= */
+/* Tipografía:
+*/
 .reveal-step h1,
 .reveal-step h2 {
   letter-spacing: -1px;
@@ -89,48 +91,49 @@ body.loading {
   max-width: 400px;
 }
 
-
-/* --- EFECTO FLIP CARD PARA EL MENÚ --- */
+/* El menú interactivo:
+  Animación de entrada y salida de las cards.
+*/
 .flip-card {
-    background-color: transparent;
-    width: 100%;
-    height: 250px; /* Altura total de la tarjeta */
-    perspective: 1000px; /* Le da el efecto 3D al girar */
+  background-color: transparent;
+  width: 100%;
+  height: 250px; 
+  perspective: 1000px; /* Esto es lo que crea la profundidad real en el navegador */
 }
 
 .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s ease-in-out;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
 }
 
-/* Al poner el mouse encima, gira 180 grados */
+/* El evento hover que desata el giro de 180 grados */
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Oculta la parte trasera de la tarjeta girada en Safari */
-    backface-visibility: hidden;
-    /* Fondo con una ligera transparencia verde oscuro como en tu imagen */
-    background-color: rgba(255, 255, 255, 0.05) !important; 
-    border: 1px solid rgba(255,255,255,0.1) !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Esto es crucial para que el navegador no muestre la cara trasera cuando no debe */
+  backface-visibility: hidden;
+  /* Transparencia oscura, como un cristal empañado */
+  background-color: rgba(255, 255, 255, 0.05) !important; 
+  border: 1px solid rgba(255,255,255,0.1) !important;
 }
 
-/* La parte de atrás ya viene girada 180 grados para que al girar se vea al derecho */
+/* La cara trasera empieza volteada para que al final del giro se lea al derecho */
 .flip-card-back {
-    transform: rotateY(180deg);
-    /* Forzamos el color amarillo premium en el reverso */
-    background-color: #ffc107 !important; 
+  transform: rotateY(180deg);
+  /* Nuestro acento visual premium para contrastar con el frente */
+  background-color: #ffc107 !important; 
 }
 
-/* Utilidad extra para espaciar letras del título (Tracking) */
+/* Un pequeño detalle de espaciado para que los títulos se vean más elegantes */
 .tracking-widest {
-    letter-spacing: 0.25em;
+  letter-spacing: 0.25em;
 }
