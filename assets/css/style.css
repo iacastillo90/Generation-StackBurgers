@@ -88,3 +88,49 @@ body.loading {
   color: #6c757d;
   max-width: 400px;
 }
+
+
+/* --- EFECTO FLIP CARD PARA EL MENÚ --- */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 250px; /* Altura total de la tarjeta */
+    perspective: 1000px; /* Le da el efecto 3D al girar */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+/* Al poner el mouse encima, gira 180 grados */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta la parte trasera de la tarjeta girada en Safari */
+    backface-visibility: hidden;
+    /* Fondo con una ligera transparencia verde oscuro como en tu imagen */
+    background-color: rgba(255, 255, 255, 0.05) !important; 
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* La parte de atrás ya viene girada 180 grados para que al girar se vea al derecho */
+.flip-card-back {
+    transform: rotateY(180deg);
+    /* Forzamos el color amarillo premium en el reverso */
+    background-color: #ffc107 !important; 
+}
+
+/* Utilidad extra para espaciar letras del título (Tracking) */
+.tracking-widest {
+    letter-spacing: 0.25em;
+}

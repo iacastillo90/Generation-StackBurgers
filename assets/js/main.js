@@ -8,7 +8,7 @@ const frameCount = 160;
 
 // Formatea el nombre (burger_001.jpg, burger_002.jpg...)
 const currentFrame = index => (
-  `img/sequence/burger_${(index + 1).toString().padStart(3, '0')}.jpg`
+  `assets/img/sequence/burger_${(index + 1).toString().padStart(3, '0')}.jpg`
 );
 
 const images = [];
@@ -103,7 +103,7 @@ function initializeTimeline() {
       pin: true,             
       start: "top top",
       // Calculamos un alto basado en el alto del viewport real
-      end: () => "+=" + (window.innerHeight * 2),   
+      end: () => "+=" + (window.innerHeight * 0.5),   
       // IMPORTANTE: scrub: true (o un valor muy bajo como 0.1) asegura que 
       // la animación no se retrase respecto al scroll. El "lag" de scrub: 1 
       // hacía que la pantalla se soltara antes de que la animación terminara de "alcanzar" al scroll.
